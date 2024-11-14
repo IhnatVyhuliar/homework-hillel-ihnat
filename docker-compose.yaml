@@ -8,7 +8,8 @@ volumes:
 
 services:
   app:
-    image: "php:8.3-apache"
+    build: 
+      context: "Docker/php"
     restart: "always"
     ports: 
       - "80:80" # 443 => https 
