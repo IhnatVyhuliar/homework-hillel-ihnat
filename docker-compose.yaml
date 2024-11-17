@@ -24,6 +24,7 @@ services:
       - "3306:3306"
     volumes:
       - mysqldata:/var/lib/mysql
+      - ./SQL/autopark.sql:/docker-entrypoint-initdb.d/autopark.sql  # Mount SQL file here
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: php_db
