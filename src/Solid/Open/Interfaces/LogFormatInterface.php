@@ -4,6 +4,5 @@ namespace Solid\Open\Interfaces;
 
 interface LogFormatInterface
 {
-    public function getStringWithFormat(string $format, string $input_string);
-    public function checkStringFormat(string $format);
+    public function getStringWithFormat(string $input_string): string;
 };
