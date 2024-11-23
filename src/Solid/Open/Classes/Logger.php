@@ -18,17 +18,8 @@ class Logger
 
     public function log(string $string): void
     {
-        $this->format($string);
-    }
-
-    public function format(string $string): void
-    {
-        $this->deliver($this->formatter->getStringWithFormat($string));
-    }
-
-    public function deliver(string $text_to_deliver): void
-    {
-        $this->delivery->deliveryExecution($text_to_deliver);
+        $formatted = $this->formatter->getStringWithFormat($string);
+        $this->delivery->deliveryExecution($formatted);  
     }
 
 }
