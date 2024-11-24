@@ -1,5 +1,12 @@
 <?php
 require_once('vendor/autoload.php');
+
+use Solid\Open\Classes\Logger;
+
+use Solid\Open\Classes\Delivery\DeliveryByConsole;
+use Solid\Open\Classes\Delivery\DeliveryBySMS;
+use Solid\Open\Classes\Formatter\RawStringFormatter;
+
 //require_once('src/autoload.php');
 
 // // use Classes\Color;
@@ -38,3 +45,13 @@ try {
 }catch (PDOException $exception){
     dd($exception->getMessage());
 }
+
+
+
+
+$delivery = new DeliveryBySMS();
+$log_formatter = new RawStringFormatter();
+
+
+$logger = new Logger($log_formatter, $delivery, 'with_date', 'by_email');
+$logger->log('Emergency error! Please fix me!');

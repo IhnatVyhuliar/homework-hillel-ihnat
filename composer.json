@@ -2,7 +2,8 @@
     "name": "ignat/main_project",
     "autoload": {
         "psr-4": {
-            "Classes\\": "src/Classes/"
+            "Classes\\": "src/Classes/",
+            "Solid\\": "src/Solid/"
         },
         "files":[
             
