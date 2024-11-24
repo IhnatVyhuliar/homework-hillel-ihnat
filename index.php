@@ -8,6 +8,8 @@ use Solid\Open\Classes\Delivery\DeliveryBySMS;
 use Solid\Open\Classes\Formatter\RawStringFormatter;
 use Solid\DependencyInversion\Controller;
 use Solid\DependencyInversion\MySQLHandler;
+
+use Patterns\Builder\Contact;
 //require_once('src/autoload.php');
 
 // // use Classes\Color;
@@ -54,8 +56,19 @@ $delivery = new DeliveryBySMS();
 $log_formatter = new RawStringFormatter();
 
 
-$logger = new Logger($log_formatter, $delivery, 'with_date', 'by_email');
-$logger->log('Emergency error! Please fix me!');
+// $logger = new Logger($log_formatter, $delivery, 'with_date', 'by_email');
+// $logger->log('Emergency error! Please fix me!');
 
-$db = new MySQLHandler();
-$controller = new Controller($db);
+// $db = new MySQLHandler();
+// $controller = new Controller($db);
+
+
+$contact = new Contact();
+$newContact = $contact->phone('000-555-000')
+    ->name("John")
+    ->surname("Surname")
+    ->email("john@email.com")
+    ->address("Some address")
+    ->build();
+
+var_dump($newContact);
