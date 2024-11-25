@@ -9,7 +9,15 @@ use Solid\Open\Classes\Formatter\RawStringFormatter;
 use Solid\DependencyInversion\Controller;
 use Solid\DependencyInversion\MySQLHandler;
 
+
 use Patterns\Builder\Contact;
+use Patterns\AbstractFactory\Delivery\LuxuryDelivery;
+use Patterns\AbstractFactory\Delivery\StandartDelivery;
+
+$delivery = new StandartDelivery();
+$standart_car = $delivery->getCar();
+var_dump($standart_car);
+
 //require_once('src/autoload.php');
 
 // // use Classes\Color;
