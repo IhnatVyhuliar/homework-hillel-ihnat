@@ -3,7 +3,8 @@
     "autoload": {
         "psr-4": {
             "Classes\\": "src/Classes/",
-            "Solid\\": "src/Solid/"
+            "Solid\\": "src/Solid/",
+            "Patterns\\": "src/Patterns/"
         },
         "files":[
             
