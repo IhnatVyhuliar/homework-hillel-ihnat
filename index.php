@@ -6,7 +6,8 @@ use Solid\Open\Classes\Logger;
 use Solid\Open\Classes\Delivery\DeliveryByConsole;
 use Solid\Open\Classes\Delivery\DeliveryBySMS;
 use Solid\Open\Classes\Formatter\RawStringFormatter;
-
+use Solid\DependencyInversion\Controller;
+use Solid\DependencyInversion\MySQLHandler;
 //require_once('src/autoload.php');
 
 // // use Classes\Color;
@@ -55,3 +56,6 @@ $log_formatter = new RawStringFormatter();
 
 $logger = new Logger($log_formatter, $delivery, 'with_date', 'by_email');
 $logger->log('Emergency error! Please fix me!');
+
+$db = new MySQLHandler();
+$controller = new Controller($db);
