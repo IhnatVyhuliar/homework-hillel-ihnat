@@ -12,10 +12,10 @@ use Solid\DependencyInversion\MySQLHandler;
 
 use Patterns\Builder\Contact;
 use Patterns\AbstractFactory\Delivery\LuxuryDelivery;
-use Patterns\AbstractFactory\Delivery\StandartDelivery;
+use Patterns\AbstractFactory\Factories\StandartFactory;
 
-$delivery = new StandartDelivery();
-$standart_car = $delivery->getCar();
+$delivery = new StandartFactory();
+$standart_car = $delivery->getFactory()->getCar();
 var_dump($standart_car);
 
 //require_once('src/autoload.php');
